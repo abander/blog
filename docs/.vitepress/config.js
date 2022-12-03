@@ -8,7 +8,7 @@ import selfPlugin from './config/selfPlugin'
 
 // @ts-ignore
 export default defineConfig({
-  title: "Zzh's note",
+  title: "smq",
   description: '~',
   lastUpdated: true,
   base: '/',
