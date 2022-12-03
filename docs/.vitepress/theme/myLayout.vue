@@ -6,7 +6,7 @@
         <layout-main v-show="!commonStore.loading" />
       </template>
       <template #doc-after>
-        <Comment v-if="(theme.commentConfig?.showComment ?? true) && (frontmatter?.showComment ?? true)" :commentConfig="theme.commentConfig" :key="getKey()" />
+        <Comment v-if="false && (theme.commentConfig?.showComment ?? true) && (frontmatter?.showComment ?? true)" :commentConfig="theme.commentConfig" :key="getKey()" />
       </template>
     </Layout>
   </div>
