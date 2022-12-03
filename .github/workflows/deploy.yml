@@ -38,7 +38,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_PRIVATE_KEY }}
           ARGS: "-avz --delete"
-          SOURCE: "docs/.vitepress/dist"
+          SOURCE: "docs/.vitepress/smq"
           REMOTE_HOST: ${{ secrets.SERVER_HOST }}
           REMOTE_USER: ${{ secrets.USER_NAME }}
           TARGET: ${{ secrets.TARGET }}

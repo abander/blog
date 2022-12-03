@@ -2,7 +2,7 @@
   "index_name": "BLOG",
   "start_urls": [
     {
-      "url": "https://1270001.xyz/",
+      "url": "https://blog.1270001.xyz/",
       "selectors_key": "v2",
       "tags": [
         "v2"
@@ -34,7 +34,7 @@
     }
   },
   "scrape_start_urls": [
-    "https://1270001.xyz/"
+    "https://blog.1270001.xyz/"
   ],
   "strip_chars": " .,;:#",
   "custom_settings": {

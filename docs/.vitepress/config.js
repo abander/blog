@@ -13,6 +13,7 @@ export default defineConfig({
   lastUpdated: true,
   base: '/',
   lang: 'zh-CN',
+  outDir: './.vitepress/smq',
   //cleanUrls: 'without-subfolders',
   head: headConfig,
   markdown: markdownConfig,
@@ -23,9 +24,9 @@ export default defineConfig({
     // @ts-ignore
     outline: 'deep',
     algolia: {
-      appId: '7CZ8QMJF3N',
-      apiKey: 'a2e2b4b5b8a5a6577ce22b876cd4f8df',
-      indexName: 'BLOG',
+      appId: 'JMAHU2S9EA',
+      apiKey: '1adca3cee698d4666229630690f3b686',
+      indexName: 'blog',
       searchParameters: {
         facetFilters: ['tags:v2'],
       },
