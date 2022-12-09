@@ -10,6 +10,7 @@
       </template>
     </Layout>
   </div>
+  <a-back-top v-if="showToTop" />
 </template>
 
 <script lang="ts" setup>
@@ -17,6 +18,7 @@ import DefaultTheme from 'vitepress/theme'
 import useMediumZoom from './hooks/useMediumZoom.js'
 import {useData} from "vitepress";
 import {useCommonStore} from './store/modules/common'
+import useHideToTop from './hooks/useHideToTop'
 
 const { page, theme, frontmatter } = useData()
 const getKey = () => {
@@ -24,6 +26,7 @@ const getKey = () => {
 }
 const { Layout } = DefaultTheme
 const commonStore = useCommonStore()
+const { showToTop } = useHideToTop()
 
 useMediumZoom()
 
