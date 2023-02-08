@@ -18,7 +18,7 @@ export default defineConfig({
   head: headConfig,
   markdown: markdownConfig,
   themeConfig: {
-    siteTitle: `ZzH's Log`,
+    siteTitle: `qiAn's Log`,
     outlineTitle: '目录', // 右侧边栏的大纲标题文本配置
     lastUpdatedText: '最后更新', // 最后更新时间文本配置, 需先配置lastUpdated为true
     // @ts-ignore
@@ -32,7 +32,7 @@ export default defineConfig({
       },
     },
     authorInfo: {
-      author: 'ZzH'
+      author: 'qiAn'
     },
     commentConfig: {
       showComment: true
@@ -46,7 +46,7 @@ export default defineConfig({
     sidebar: sidebarConfig,
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present Zzh',
+      copyright: 'Copyright © 2019-present qiAn',
     },
     selfPlugin
   },

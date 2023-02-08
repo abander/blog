@@ -7,7 +7,7 @@ const str = `---
 title: -
 date: ${moment().format('YYYY-MM-DD HH:mm:ss')}
 sidebar: auto
-author: Zzh
+author: qiAn
 tags:
   - tag1
 categories:
