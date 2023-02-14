@@ -117,6 +117,69 @@ const sidebarConfig = {
             ],
         },
     ],
+
+    '/html/': [
+        {
+            text: '基础知识',
+            items: [
+                { text: '前端简介', link: '/css/brief-introduction' },
+                { text: 'basic', link: '/html/basic' },
+            ],
+        },
+        {
+            text: 'html4',
+            items: [],
+        },
+        {
+            text: 'html5',
+            items: [],
+        }
+    ],
+
+    '/css/': [
+        {
+            text: 'CSS简介',
+            items: [
+                { text: 'basic', link: '/css/brief-introduction' }
+            ],
+        },
+        {
+            text: 'css3',
+            items: [
+                 { text: '盒模型', link: '/css/css3/box-model' },
+                 { text: '浮动', link: '/css/css3/float' }
+            ],
+        },
+        {
+            text: 'css4',
+            items: [],
+        }
+    ],
+
+    '/vue2/': [
+        {
+            text: '组件封装知识点',
+            items: [
+                { text: 'inheritAttrs', link: '/vue2/component-encapsulation-knowledge/inheritAttrs' }
+            ]
+        },
+        {
+            text: '组件封装',
+            items: [
+                { text: '简单封装示例', link: '/vue2/component-encapsulation/example' },
+                { text: '封装button组件', link: '/vue2/component-encapsulation/button' },
+                { text: '封装checkbox组件', link: '/vue2/component-encapsulation/checkbox' },
+                { text: '封装checkbox-group组件', link: '/vue2/component-encapsulation/checkbox-group' },
+                { text: '封装dialog组件', link: '/vue2/component-encapsulation/dialog' },
+                { text: '封装form和form-item组件', link: '/vue2/component-encapsulation/form' },
+                { text: '封装input组件', link: '/vue2/component-encapsulation/input' },
+                { text: '封装radio组件', link: '/vue2/component-encapsulation/radio' },
+                { text: '封装radio-group组件', link: '/vue2/component-encapsulation/radio-group' },
+                { text: '封装switch组件', link: '/vue2/component-encapsulation/switch' },
+                { text: '封装成vue组件库', link: '/vue2/component-encapsulation/component-storehouse' }
+            ]
+        }
+    ],
 }
 
 export default sidebarConfig
