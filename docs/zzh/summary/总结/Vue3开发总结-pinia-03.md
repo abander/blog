@@ -34,7 +34,7 @@ Pinia从使用角度和之前的Vuex一样。
 ## 使用
 
 ### 目录结构
-![](https://cdn.jsdelivr.net/gh/zhihao2030/note-img@main/20221202172116.png)
+<a-image src="https://cdn.jsdelivr.net/gh/zhihao2030/note-img@main/20221202172116.png" />
 
 ```javascript
 // /store/index.js
@@ -257,18 +257,19 @@ export const useUserStore = defineStore('user', {
 ```
 
 ## [在组件外使用store](https://pinia.vuejs.org/zh/core-concepts/outside-component-usage.html)
+
 ```js
-import { defineStore } from 'pinia'
-import store from '../'
+import {defineStore} from 'pinia'
+import store from './index'
 
 // 第一个参数是应用程序中 store 的唯一 id
 export const useUserStore = defineStore('user', {
-  state: {
-      userInfo: {}
-      ...
-  },
-  getters: {},
-  actions:{}
+    state: {
+        userInfo: {}
+        ...
+    },
+    getters: {},
+    actions: {}
 })
 
 // 需要在setup之外使用

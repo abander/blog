@@ -1,23 +1,8 @@
-const sidebarConfig = {
-    '/summary/': [
-        {
-            text: '遇到的问题',
-            items: [
+import fastGlob from 'fast-glob'
+import matter from 'gray-matter'
 
-                { text: 'moment.js 时间格式化-时区问题', link: '/summary/problem/moment.js 时间格式化-时区问题' },
-                { text: '文件下载处理', link: '/summary/problem/文件下载处理' },
-            ],
-        },
-        {
-            text: '总结',
-            items: [
-                { text: 'tree的相互转换', link: '/summary/log/tree的相互转换' },
-                { text: 'Vue3开发总结-01', link: '/summary/log/Vue3开发总结-01' },
-                { text: 'Vue3开发总结-vite-02', link: '/summary/log/Vue3开发总结-vite-02' },
-                { text: 'Vue3开发总结-pinia-03', link: '/summary/log/Vue3开发总结-pinia-03' },
-            ],
-        }
-    ],
+const { sync } = fastGlob;
+const sidebarConfig = {
     '/devops/': [
         {
             text: '持续集成',
@@ -118,68 +103,59 @@ const sidebarConfig = {
         },
     ],
 
-    '/html/': [
-        {
-            text: '基础知识',
-            items: [
-                { text: '前端简介', link: '/css/brief-introduction' },
-                { text: 'basic', link: '/html/basic' },
-            ],
-        },
-        {
-            text: 'html4',
-            items: [],
-        },
-        {
-            text: 'html5',
-            items: [],
-        }
-    ],
+    // smq
+    // 笔记
+    '/note/': getSideItems('/note/'),
 
-    '/css/': [
-        {
-            text: 'CSS简介',
-            items: [
-                { text: 'basic', link: '/css/brief-introduction' }
-            ],
-        },
-        {
-            text: 'css3',
-            items: [
-                 { text: '盒模型', link: '/css/css3/box-model' },
-                 { text: '浮动', link: '/css/css3/float' }
-            ],
-        },
-        {
-            text: 'css4',
-            items: [],
-        }
-    ],
+    // 日常
+    '/daily/html/': getSideItems('/daily/html/'),
+    '/daily/css/': getSideItems('/daily/css/'),
+    '/daily/js/': getSideItems('/daily/js/'),
+    '/daily/vue2/': getSideItems('/daily/vue2/'),
+    '/daily/vue3/': getSideItems('/daily/vue3/'),
+    '/daily/component-encapsulation/': getSideItems('/daily/component-encapsulation/'),  // 组件封装
 
-    '/vue2/': [
-        {
-            text: '组件封装知识点',
-            items: [
-                { text: 'inheritAttrs', link: '/vue2/component-encapsulation-knowledge/inheritAttrs' }
-            ]
-        },
-        {
-            text: '组件封装',
-            items: [
-                { text: '简单封装示例', link: '/vue2/component-encapsulation/example' },
-                { text: '封装button组件', link: '/vue2/component-encapsulation/button' },
-                { text: '封装checkbox组件', link: '/vue2/component-encapsulation/checkbox' },
-                { text: '封装checkbox-group组件', link: '/vue2/component-encapsulation/checkbox-group' },
-                { text: '封装dialog组件', link: '/vue2/component-encapsulation/dialog' },
-                { text: '封装form和form-item组件', link: '/vue2/component-encapsulation/form' },
-                { text: '封装input组件', link: '/vue2/component-encapsulation/input' },
-                { text: '封装radio组件', link: '/vue2/component-encapsulation/radio' },
-                { text: '封装radio-group组件', link: '/vue2/component-encapsulation/radio-group' },
-                { text: '封装switch组件', link: '/vue2/component-encapsulation/switch' },
-                { text: '封装成vue组件库', link: '/vue2/component-encapsulation/component-storehouse' }
-            ]
-        }
-    ],
+    //问题总结
+    '/issue-summary/': getSideItems('/issue-summary/'),
+
+    // 杂项
+    '/miscellaneous/': getSideItems('/miscellaneous/'),
+
+    // zzh 笔记
+    // 总结
+    '/zzh/summary/': getSideItems('/zzh/summary/'),
+    // 日常
+    '/zzh/daily/': getSideItems('/zzh/daily/'),
+}
+
+function getSideItems(path) {
+    const side = []
+    const rootPath = path
+    // 1.获取所有目录
+    sync(`docs${path}*`, {
+        onlyDirectories: true,
+        objectMode: true
+    }).forEach(({ name:dirName }) => {
+        const sideText = dirName
+        const sideItems = []
+        sync(`docs${path}${dirName}/*`, {
+            onlyFiles: true,
+            objectMode: true
+        }).forEach((article) => {
+            const { name } = article
+            const articleFile = matter.read(`${article.path}`)
+            const { data } = articleFile
+            sideItems.push({
+                text: data.title,
+                link: `${path}${dirName}/${name.replace('.md','')}`
+            })
+        })
+        side.push({
+            text: sideText,
+            items: sideItems
+        })
+    })
+    return side
 }
 
 export default sidebarConfig

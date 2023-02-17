@@ -118,7 +118,8 @@ function getIcon(name) {
 import.meta 对象包含关于当前模块的信息。
 它的内容取决于其所在的环境。在浏览器环境中，它包含当前脚本的 URL，或者如果它是在 HTML 中的话，则包含当前页面的 URL。
 比如在组件中
-![](https://cdn.jsdelivr.net/gh/zhihao2030/note-img@main/20221201172943.png)
+<a-image src="https://cdn.jsdelivr.net/gh/zhihao2030/note-img@main/20221201172943.png" />
+
 
 ## 配置全局 scss
 ```javascript
