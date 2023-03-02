@@ -15,5 +15,8 @@ export default defineConfig({
             resolvers: [ArcoResolver({ sideEffect: true, resolveIcons: true })]
         })
     ],
-    ssr: { noExternal: ['@arco-design/web-vue'] }
+    ssr: { noExternal: ['@arco-design/web-vue'] },
+    build: {
+        chunkSizeWarningLimit: 2000
+    }
 })
